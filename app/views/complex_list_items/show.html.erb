@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Guid:</strong>
+  <%= @complex_list_item.guid %>
+</p>
+
+<p>
+  <strong>List:</strong>
+  <%= @complex_list_item.list %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @complex_list_item.data %>
+</p>
+
+<p>
+  <strong>Sort number:</strong>
+  <%= @complex_list_item.sort_number %>
+</p>
+
+<%= link_to 'Edit', edit_complex_list_item_path(@complex_list_item) %> |
+<%= link_to 'Back', complex_list_items_path %>

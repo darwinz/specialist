@@ -1,0 +1,42 @@
+<%= form_with(model: list_type, local: true) do |form| %>
+  <% if list_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(list_type.errors.count, "error") %> prohibited this list_type from being saved:</h2>
+
+      <ul>
+      <% list_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.text_field :id, id: :list_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :list_type_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :list_type_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.date_select :created_at, id: :list_type_created_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modified_at %>
+    <%= form.date_select :modified_at, id: :list_type_modified_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

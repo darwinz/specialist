@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Complex List Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Guid</th>
+      <th>List</th>
+      <th>Data</th>
+      <th>Sort number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @complex_list_items.each do |complex_list_item| %>
+      <tr>
+        <td><%= complex_list_item.guid %></td>
+        <td><%= complex_list_item.list %></td>
+        <td><%= complex_list_item.data %></td>
+        <td><%= complex_list_item.sort_number %></td>
+        <td><%= link_to 'Show', complex_list_item %></td>
+        <td><%= link_to 'Edit', edit_complex_list_item_path(complex_list_item) %></td>
+        <td><%= link_to 'Destroy', complex_list_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Complex List Item', new_complex_list_item_path %>

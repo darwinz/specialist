@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Guid:</strong>
+  <%= @number_list_item.guid %>
+</p>
+
+<p>
+  <strong>List:</strong>
+  <%= @number_list_item.list %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @number_list_item.data %>
+</p>
+
+<%= link_to 'Edit', edit_number_list_item_path(@number_list_item) %> |
+<%= link_to 'Back', number_list_items_path %>

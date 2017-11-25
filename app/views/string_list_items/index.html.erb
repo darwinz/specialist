@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>String List Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Guid</th>
+      <th>List</th>
+      <th>Data</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @string_list_items.each do |string_list_item| %>
+      <tr>
+        <td><%= string_list_item.guid %></td>
+        <td><%= string_list_item.list %></td>
+        <td><%= string_list_item.data %></td>
+        <td><%= link_to 'Show', string_list_item %></td>
+        <td><%= link_to 'Edit', edit_string_list_item_path(string_list_item) %></td>
+        <td><%= link_to 'Destroy', string_list_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New String List Item', new_string_list_item_path %>

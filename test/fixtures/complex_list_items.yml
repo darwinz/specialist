@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guid: MyString
+  list: one
+  data: MyText
+  sort_number: 
+
+two:
+  guid: MyString
+  list: two
+  data: MyText
+  sort_number: 

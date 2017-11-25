@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @list_type.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @list_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @list_type.description %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @list_type.created_at %>
+</p>
+
+<p>
+  <strong>Modified at:</strong>
+  <%= @list_type.modified_at %>
+</p>
+
+<%= link_to 'Edit', edit_list_type_path(@list_type) %> |
+<%= link_to 'Back', list_types_path %>

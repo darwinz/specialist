@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guid: MyString
+  list: one
+  data: 1.5
+
+two:
+  guid: MyString
+  list: two
+  data: 1.5
