@@ -25,13 +25,6 @@ ActiveRecord::Schema.define(version: 20171118091350) do
     t.index ["list_id"], name: "index_complex_list_items_on_list_id"
   end
 
-  create_table "data_types", force: :cascade do |t|
-    t.string "name", limit: 255, null: false
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "list_types", force: :cascade do |t|
     t.string "name", limit: 255, null: false
     t.text "description"
