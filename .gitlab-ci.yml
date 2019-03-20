@@ -4,9 +4,8 @@ stages:
   - test
 
 before_script:
-  - go get github.com/tools/godep
-  - cp -r /builds/user /go/src/github.com/user/
-  - cd /go/src/github.com/user/repo
+  - cp hello.go /go/src/
+  - cd /go/src
 
 build-my-project:
   stage: build
