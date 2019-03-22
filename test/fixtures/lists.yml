@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  guid: MyString
+  guid: MyString1
   title: MyString
   description: MyText
-  list_type: one
+  list_type_id: 1
+  active: 1
 
 two:
-  guid: MyString
+  guid: MyString2
   title: MyString
   description: MyText
-  list_type: two
+  list_type_id: 2
+  active: 1

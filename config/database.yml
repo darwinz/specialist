@@ -15,15 +15,17 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
+  adapter:  postresql
+  encoding: utf8
   database: specialist_development
+  pool:     5
   username: specialist
   password: specialist
 
@@ -58,10 +60,10 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
+  adapter:  sqlite3
   database: specialist_test
-  username: specialist
-  password: specialist
+  pool:     5
+  timeout:  5000
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,7 +85,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter:  postgresql
+  encoding: utf8
   database: specialist_production
+  pool:     5
   username: specialist
   password: <%= ENV['SPECIALIST_DATABASE_PASSWORD'] %>

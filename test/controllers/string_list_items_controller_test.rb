@@ -17,7 +17,7 @@ class StringListItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create string_list_item" do
     assert_difference('StringListItem.count') do
-      post string_list_items_url, params: { string_list_item: { data: @string_list_item.data, guid: @string_list_item.guid, list_id: @string_list_item.list_id } }
+      post string_list_items_url, params: { string_list_item: { data: @string_list_item.data, sort_number: @string_list_item.sort_number, guid: @string_list_item.guid, list_id: @string_list_item.list_id } }
     end
 
     assert_redirected_to string_list_item_url(StringListItem.last)
@@ -34,7 +34,7 @@ class StringListItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update string_list_item" do
-    patch string_list_item_url(@string_list_item), params: { string_list_item: { data: @string_list_item.data, guid: @string_list_item.guid, list_id: @string_list_item.list_id } }
+    patch string_list_item_url(@string_list_item), params: { string_list_item: { data: @string_list_item.data, sort_number: @string_list_item.sort_number, guid: @string_list_item.guid, list_id: @string_list_item.list_id } }
     assert_redirected_to string_list_item_url(@string_list_item)
   end
 

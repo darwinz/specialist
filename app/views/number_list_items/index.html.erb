@@ -8,6 +8,7 @@
       <th>Guid</th>
       <th>List</th>
       <th>Data</th>
+      <th>Sort Number</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= number_list_item.guid %></td>
         <td><%= number_list_item.list %></td>
         <td><%= number_list_item.data %></td>
+        <td><%= number_list_item.sort_number %></td>
         <td><%= link_to 'Show', number_list_item %></td>
         <td><%= link_to 'Edit', edit_number_list_item_path(number_list_item) %></td>
         <td><%= link_to 'Destroy', number_list_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
