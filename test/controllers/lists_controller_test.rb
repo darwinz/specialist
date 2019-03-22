@@ -17,7 +17,18 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create list" do
     assert_difference('List.count') do
-      post lists_url, params: { list: { description: @list.description, guid: @list.guid, list_type_id: @list.list_type_id, title: @list.title } }
+      post lists_url, params: {
+        list: {
+          created_at: @list.created_at,
+          title: @list.title,
+          id: @list.id,
+          updated_at: @list.updated_at,
+          description: @list.description,
+          list_type_id: @list.list_type_id,
+          guid: @list.guid,
+          active: @list.active
+        }
+      }
     end
 
     assert_redirected_to list_url(List.last)
@@ -34,15 +45,24 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update list" do
-    patch list_url(@list), params: { list: { description: @list.description, guid: @list.guid, list_type_id: @list.list_type_id, title: @list.title } }
+    patch list_url(@list), params: {
+      list: {
+        created_at: @list.created_at,
+        title: @list.title,
+        id: @list.id,
+        updated_at: @list.updated_at,
+        description: @list.description,
+        list_type_id: @list.list_type_id,
+        guid: @list.guid,
+        active: @list.active
+      }
+    }
     assert_redirected_to list_url(@list)
   end
 
   test "should destroy list" do
-    assert_difference('List.count', -1) do
+    assert(@list.active, 0) do
       delete list_url(@list)
     end
-
-    assert_redirected_to lists_url
   end
 end

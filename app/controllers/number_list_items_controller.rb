@@ -64,11 +64,11 @@ class NumberListItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_number_list_item
-      @number_list_item = NumberListItem.find(params[:id])
+      @number_list_item = NumberListItem.find(params[:id]) or not_found
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def number_list_item_params
-      params.require(:number_list_item).permit(:guid, :list_id, :data)
+      params.require(:number_list_item).permit(:guid, :list_id, :data, :sort_number)
     end
 end

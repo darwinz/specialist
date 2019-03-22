@@ -1,21 +1,18 @@
-image: golang:1.7
-stages:
-  - build
-  - test
+image: "ruby:2.3.7"
+
+variables:
+  RAILS_ENV: test
+
+cache:
+  paths:
+    - vendor/ruby
 
 before_script:
-  - go get github.com/tools/godep
-  - cp -r /builds/user /go/src/github.com/user/
-  - cd /go/src/github.com/user/repo
+  - ruby -v
+  - apt-get update -q && apt-get install nodejs -yqq
+  - bundle install
+  - bundle exec rake db:drop db:create db:migrate
 
-build-my-project:
-  stage: build
+test:
   script:
-    - godep restore
-    - godep go build
-
-test-my-project:
-  stage: test
-  script:
-    - godep restore
-    - godep go test -v -cover ./...
+  - bundle exec bin/rails test test

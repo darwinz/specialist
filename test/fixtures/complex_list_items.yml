@@ -4,10 +4,10 @@ one:
   guid: MyString
   list: one
   data: MyText
-  sort_number: 
+  sort_number: 1
 
 two:
   guid: MyString
   list: two
   data: MyText
-  sort_number: 
+  sort_number: 2

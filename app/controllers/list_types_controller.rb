@@ -64,7 +64,7 @@ class ListTypesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list_type
-      @list_type = ListType.find(params[:id])
+      @list_type = ListType.find(params[:id]) or not_found
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
