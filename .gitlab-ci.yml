@@ -1,0 +1,18 @@
+image: "ruby:2.3.7"
+
+variables:
+  RAILS_ENV: test
+
+cache:
+  paths:
+    - vendor/ruby
+
+before_script:
+  - ruby -v
+  - apt-get update -q && apt-get install nodejs -yqq
+  - bundle install
+  - bundle exec rake db:drop db:create db:migrate
+
+test:
+  script:
+  - bundle exec bin/rails test test

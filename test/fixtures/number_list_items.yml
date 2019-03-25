@@ -4,8 +4,10 @@ one:
   guid: MyString
   list: one
   data: 1.5
+  sort_number: 1
 
 two:
   guid: MyString
   list: two
   data: 1.5
+  sort_number: 2
