@@ -10,14 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118091350) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20190324061858) do
 
   create_table "complex_list_items", force: :cascade do |t|
     t.string "guid", null: false
-    t.bigint "list_id", null: false
+    t.integer "list_id", null: false
     t.text "data", null: false
     t.decimal "sort_number", null: false
     t.datetime "created_at", null: false
@@ -31,21 +28,23 @@ ActiveRecord::Schema.define(version: 20171118091350) do
     t.string "item_type", limit: 55, default: "null"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "active", default: 1, null: false
   end
 
   create_table "lists", force: :cascade do |t|
     t.string "guid", limit: 255, null: false
     t.string "title", limit: 255, null: false
     t.text "description"
-    t.bigint "list_type_id", null: false
+    t.integer "list_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "active", default: 1, null: false
     t.index ["list_type_id"], name: "index_lists_on_list_type_id"
   end
 
   create_table "number_list_items", force: :cascade do |t|
     t.string "guid", null: false
-    t.bigint "list_id", null: false
+    t.integer "list_id", null: false
     t.float "data", null: false
     t.decimal "sort_number", null: false
     t.datetime "created_at", null: false
@@ -55,7 +54,7 @@ ActiveRecord::Schema.define(version: 20171118091350) do
 
   create_table "string_list_items", force: :cascade do |t|
     t.string "guid", null: false
-    t.bigint "list_id", null: false
+    t.integer "list_id", null: false
     t.string "data", null: false
     t.decimal "sort_number", null: false
     t.datetime "created_at", null: false
@@ -63,8 +62,4 @@ ActiveRecord::Schema.define(version: 20171118091350) do
     t.index ["list_id"], name: "index_string_list_items_on_list_id"
   end
 
-  add_foreign_key "complex_list_items", "lists"
-  add_foreign_key "lists", "list_types"
-  add_foreign_key "number_list_items", "lists"
-  add_foreign_key "string_list_items", "lists"
 end

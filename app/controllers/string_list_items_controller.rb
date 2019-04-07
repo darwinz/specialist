@@ -64,11 +64,11 @@ class StringListItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_string_list_item
-      @string_list_item = StringListItem.find(params[:id])
+      @string_list_item = StringListItem.find(params[:id]) or not_found
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def string_list_item_params
-      params.require(:string_list_item).permit(:guid, :list_id, :data)
+      params.require(:string_list_item).permit(:guid, :list_id, :data, :sort_number)
     end
 end

@@ -27,19 +27,31 @@ Install / Setup
 ```bash
 $ npm install
 ```
+* Run bundle
+```bash
+$ bundle
+```
 * Create db
 ```bash
-$ rake db:create
+$ bundle exec rake db:create
 ```
 * Run migrations
 ```bash
-$ rake db:migrate
+$ bundle exec rake db:migrate
 ```
 * Run db seed script
 ```bash
-$ rake db:seed
+$ bundle exec rake db:seed
 ```
 * Start rails server
 ```bash
-$ rails s
+$ bundle exec rails s
+```
+
+Testing
+------------------
+
+* Run the test suite
+```bash
+$ bundle exec bin/rails test test
 ```
