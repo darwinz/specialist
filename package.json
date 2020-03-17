@@ -2,7 +2,7 @@
   "name": "specialist",
   "private": true,
   "description": "Ruby on Rails web application all about common lists and the things you can do with them",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "keywords": [
     "ruby",
     "rails",
@@ -11,9 +11,10 @@
   ],
   "author": "Brandon Johnson <bbj1979@gmail.com>",
   "engines": {
-    "node": ">=8.5.0"
+    "node": ">=8.10.0"
   },
   "dependencies": {
+    "npm": "^6.14.2",
     "npm-audit": "0.0.3",
     "react": "^16.0.0",
     "react-dom": "^16.13.0"
