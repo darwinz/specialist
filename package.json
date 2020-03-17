@@ -2,7 +2,7 @@
   "name": "specialist",
   "private": true,
   "description": "Ruby on Rails web application all about common lists and the things you can do with them",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "ruby",
     "rails",
@@ -14,8 +14,9 @@
     "node": ">=8.5.0"
   },
   "dependencies": {
+    "npm-audit": "0.0.3",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -24,6 +25,6 @@
     "babel-preset-react": "^6.24.1",
     "html-webpack-plugin": "^2.30.1",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^2.11.5"
   }
 }
