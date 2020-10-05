@@ -22,8 +22,11 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
+  adapter:  postgresql
+  encoding: utf8
   database: specialist_development
+  host:     db
+  pool:     5
   username: specialist
   password: specialist
 
